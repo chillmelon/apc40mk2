@@ -31,13 +31,13 @@ to work.
 * `SHIFT NUDGE-` - halves the loop length
 * `SHIFT NUDGE+` - doubles the loop length. note: this will cause the play position to jump unnecessarily sometimes (i think this is an ableton bug)
 
-## demo/tutorial
+## demo/tutorial made by Azuki
 
 https://www.youtube.com/watch?v=YILKOWhN2ag
 
 ## credits
 
-I just convert diracdeltas' code to work with Python 3 so it can work with Ableton Live 11. The python2 version that works with older Ableton Live can at https://github.com/diracdeltas/apc40mk2.
+I just converted diracdeltas' code to work with Python 3 so it can work with Ableton Live 11. The python2 version that works with older Ableton Live can at https://github.com/diracdeltas/apc40mk2.
 Thanks to will marshall for doing most of the work for LooperComponent in https://github.com/willrjmarshall/AbletonDJTemplateUnsupported.
 
 ## license
