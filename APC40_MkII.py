@@ -4,7 +4,7 @@
 # [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)]
 # Embedded file name: /Users/versonator/Jenkins/live/output/mac_64_static/Release/python-bundle/MIDI Remote Scripts/APC40_MkII/APC40_MkII.py
 # Compiled at: 2019-04-09 19:23:44
-from __future__ import absolute_import, print_function, unicode_literals
+
 from functools import partial
 from _Framework.ButtonMatrixElement import ButtonMatrixElement
 from _Framework.ComboElement import ComboElement, DoublePressElement, MultiElement
@@ -78,40 +78,40 @@ class APC40_MkII(APC, OptimizedControlSurface):
         self._right_button = make_button(0, 96, name='Bank_Select_Right_Button')
         self._up_button = make_button(0, 94, name='Bank_Select_Up_Button')
         self._down_button = make_button(0, 95, name='Bank_Select_Down_Button')
-        self._stop_buttons = ButtonMatrixElement(rows=[[ make_stop_button(track) for track in xrange(NUM_TRACKS) ]])
+        self._stop_buttons = ButtonMatrixElement(rows=[[ make_stop_button(track) for track in range(NUM_TRACKS) ]])
         self._stop_all_button = make_button(0, 81, name='Stop_All_Clips_Button')
-        self._scene_launch_buttons_raw = [ make_color_button(0, scene + 82, name='Scene_%d_Launch_Button' % scene) for scene in xrange(NUM_SCENES)
+        self._scene_launch_buttons_raw = [ make_color_button(0, scene + 82, name='Scene_%d_Launch_Button' % scene) for scene in range(NUM_SCENES)
                                          ]
         self._scene_launch_buttons = ButtonMatrixElement(rows=[
          self._scene_launch_buttons_raw])
-        self._matrix_rows_raw = [ [ make_matrix_button(track, scene) for track in xrange(NUM_TRACKS) ] for scene in xrange(NUM_SCENES)
+        self._matrix_rows_raw = [ [ make_matrix_button(track, scene) for track in range(NUM_TRACKS) ] for scene in range(NUM_SCENES)
                                 ]
         self._session_matrix = ButtonMatrixElement(rows=self._matrix_rows_raw)
         self._pan_button = make_on_off_button(0, 87, name='Pan_Button')
         self._sends_button = make_on_off_button(0, 88, name='Sends_Button', resource_type=PrioritizedResource)
         self._user_button = make_on_off_button(0, 89, name='User_Button')
         self._mixer_encoders = ButtonMatrixElement(rows=[
-         [ make_ring_encoder(48 + track, 56 + track, name='Track_Control_%d' % track) for track in xrange(NUM_TRACKS)
+         [ make_ring_encoder(48 + track, 56 + track, name='Track_Control_%d' % track) for track in range(NUM_TRACKS)
          ]])
         self._volume_controls = ButtonMatrixElement(rows=[
-         [ make_slider(track, 7, name='%d_Volume_Control' % track) for track in xrange(NUM_TRACKS)
+         [ make_slider(track, 7, name='%d_Volume_Control' % track) for track in range(NUM_TRACKS)
          ]])
         self._master_volume_control = make_slider(0, 14, name='Master_Volume_Control')
         self._prehear_control = make_encoder(0, 47, name='Prehear_Volume_Control')
         self._crossfader_control = make_slider(0, 15, name='Crossfader')
-        self._raw_select_buttons = [ make_on_off_button(channel, 51, name='%d_Select_Button' % channel) for channel in xrange(NUM_TRACKS)
+        self._raw_select_buttons = [ make_on_off_button(channel, 51, name='%d_Select_Button' % channel) for channel in range(NUM_TRACKS)
                                    ]
         self._arm_buttons = ButtonMatrixElement(rows=[
-         [ make_on_off_button(channel, 48, name='%d_Arm_Button' % channel) for channel in xrange(NUM_TRACKS)
+         [ make_on_off_button(channel, 48, name='%d_Arm_Button' % channel) for channel in range(NUM_TRACKS)
          ]])
         self._solo_buttons = ButtonMatrixElement(rows=[
-         [ make_on_off_button(channel, 49, name='%d_Solo_Button' % channel) for channel in xrange(NUM_TRACKS)
+         [ make_on_off_button(channel, 49, name='%d_Solo_Button' % channel) for channel in range(NUM_TRACKS)
          ]])
         self._mute_buttons = ButtonMatrixElement(rows=[
-         [ make_on_off_button(channel, 50, name='%d_Mute_Button' % channel) for channel in xrange(NUM_TRACKS)
+         [ make_on_off_button(channel, 50, name='%d_Mute_Button' % channel) for channel in range(NUM_TRACKS)
          ]])
         self._crossfade_buttons = ButtonMatrixElement(rows=[
-         [ make_button(channel, 66, name='%d_Crossfade_Button' % channel, skin=self._crossfade_button_skin) for channel in xrange(NUM_TRACKS)
+         [ make_button(channel, 66, name='%d_Crossfade_Button' % channel, skin=self._crossfade_button_skin) for channel in range(NUM_TRACKS)
          ]])
         self._select_buttons = ButtonMatrixElement(rows=[
          self._raw_select_buttons])
@@ -131,9 +131,9 @@ class APC40_MkII(APC, OptimizedControlSurface):
         #self._tap_tempo_button = make_button(0, 99, name='Tap_Tempo_Button')
         self._tempo_control = make_encoder(0, 13, name='Tempo_Control')
         self._device_controls = ButtonMatrixElement(rows=[
-         [ make_ring_encoder(16 + index, 24 + index, name='Device_Control_%d' % index) for index in xrange(8)
+         [ make_ring_encoder(16 + index, 24 + index, name='Device_Control_%d' % index) for index in range(8)
          ]])
-        self._device_control_buttons_raw = [ make_on_off_button(0, 58 + index) for index in xrange(8)
+        self._device_control_buttons_raw = [ make_on_off_button(0, 58 + index) for index in range(8)
                                            ]
         self._device_bank_buttons = ButtonMatrixElement(rows=[
          [ DeviceBankButtonElement(button, modifiers=[self._shift_button]) for button in self._device_control_buttons_raw

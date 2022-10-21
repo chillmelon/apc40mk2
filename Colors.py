@@ -4,7 +4,7 @@
 # [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)]
 # Embedded file name: /Users/versonator/Jenkins/live/output/mac_64_static/Release/python-bundle/MIDI Remote Scripts/APC40_MkII/Colors.py
 # Compiled at: 2019-04-09 19:23:44
-from __future__ import absolute_import, print_function, unicode_literals
+
 LIVE_COLORS_TO_MIDI_VALUES = {10927616: 74, 
    16149507: 84, 
    4047616: 76, 

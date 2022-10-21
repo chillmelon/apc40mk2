@@ -4,8 +4,8 @@
 # [GCC 4.2.1 Compatible Apple LLVM 6.0 (clang-600.0.57)]
 # Embedded file name: /Users/versonator/Jenkins/live/output/mac_64_static/Release/python-bundle/MIDI Remote Scripts/APC40_MkII/MixerComponent.py
 # Compiled at: 2019-04-09 19:23:44
-from __future__ import absolute_import, print_function, unicode_literals
-from itertools import ifilter, izip_longest
+
+from itertools import zip_longest
 from _Framework.Control import RadioButtonControl, control_list
 from _Framework.Dependency import depends
 from _Framework.Util import nop
@@ -28,7 +28,7 @@ class ChannelStripComponent(ChannelStripComponentBase):
 
 
 def _set_channel(controls, channel):
-    for control in ifilter(None, controls or []):
+    for control in filter(None, controls or []):
         control.set_channel(channel)
 
     return
@@ -93,7 +93,7 @@ class MixerComponent(MixerComponentBase):
             self._show_message('Controlling User Mappings')
 
     def set_crossfade_buttons(self, buttons):
-        for strip, button in izip_longest(self._channel_strips, buttons or []):
+        for strip, button in zip_longest(self._channel_strips, buttons or []):
             strip.set_crossfade_toggle(button)
 
     def _update_pan_controls(self):
