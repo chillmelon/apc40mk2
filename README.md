@@ -9,7 +9,7 @@ CDJ-style looping control mapping for the APC40MKII ableton midi controller
 
 ## installing
 
-1. download release.zip from https://github.com/diracdeltas/apc40mk2/releases/latest
+1. download apc40mk2_chillmelon.zip from https://github.com/chillmelon/apc40mk2/releases/latest
 2. unzip it
 3. copy the unzipped `apc40mkii_chillmelon` folder to your Ableton MIDI remote
    scripts directory using the instructions at
